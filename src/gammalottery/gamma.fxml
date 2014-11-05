@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gammalottery.GammaFXMLController">
+    <children>
+        <Label layoutX="29.0" layoutY="13.0" text="ΛΧΑ Gamma Lottery">
+<font>
+<Font size="28.0" />
+</font></Label>
+        <Label layoutX="282.0" layoutY="43.0" text="ΕΡΖ" />
+        <Label layoutX="29.0" layoutY="82.0" text="Name" />
+        <ComboBox fx:id="nameBox" editable="true" layoutX="69.0" layoutY="78.0" prefHeight="25.0" prefWidth="142.0" />
+        <Label layoutX="219.0" layoutY="82.0" text="# Entries" />
+        <ComboBox fx:id="entryBox" editable="true" layoutX="292.0" layoutY="78.0" prefHeight="25.0" prefWidth="131.0" />
+        <Button fx:id="addButton" layoutX="438.0" layoutY="78.0" mnemonicParsing="false" onAction="#addToLottery" text="add" />
+        <Button fx:id="removeButton" disable="true" layoutX="481.1875" layoutY="78.0" mnemonicParsing="false" onAction="#removeFromLottery" text="remove" />
+        <Button fx:id="drawButton" defaultButton="true" layoutX="418.0" layoutY="39.0" mnemonicParsing="false" onAction="#drawAction" prefHeight="25.0" prefWidth="119.0" text="Draw" />
+        <TableView fx:id="table" layoutX="16.0" layoutY="118.0" prefHeight="262.0" prefWidth="526.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="272.0" text="Name" />
+                <TableColumn fx:id="entryColumn" minWidth="0.0" prefWidth="142.0" text="# Entries" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
