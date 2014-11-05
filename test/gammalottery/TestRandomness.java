@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * All components of this software is dual licensed under GNU General Public License v2 (GPL-2) 
+ * for personal usage for commercial usage you must contact the author prior distribution, usage.
+ *
  */
 package gammalottery;
 
@@ -17,9 +17,10 @@ import javafx.collections.ObservableList;
 import org.junit.Test;
 
 /**
+ * @author:Rodrigo Mansueli Nunes  {@literal <mansueli@ualberta.ca>}
+ * <a href="http://kyllo.com.br">kyllo.com.br</a>
  *
- * @author Rodrigo
- */
+ **/
 public class TestRandomness {
 
     ObservableList<LotteryObject> gammaList = FXCollections.observableArrayList();
