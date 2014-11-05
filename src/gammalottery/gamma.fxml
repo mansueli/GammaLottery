@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!---
+ * All components of this software is licensed under GNU General Public License v2 (GPL-2) 
+ * for personal usage. For commercial usage you must contact the author prior distribution or usage.
+ *
+ *
+ * @author:Rodrigo Mansueli Nunes  {@literal <mansueli@ualberta.ca>}
+ * <a href="http://kyllo.com.br">kyllo.com.br</a>
+ *
+-->
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>

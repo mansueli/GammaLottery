@@ -1,23 +1,33 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * All components of this software is dual licensed under GNU General Public License v2 (GPL-2) 
+ * for personal usage for commercial usage you must contact the author prior distribution, usage.
+ *
  */
-
 package gammalottery;
 
-/**
- *
- * @author Rodrigo
- */
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+
+/**
+ * FXML TableView data class
+ * 
+ * @author:Rodrigo Mansueli Nunes  {@literal <mansueli@ualberta.ca>}
+ * <a href="http://kyllo.com.br">kyllo.com.br</a>
+ *
+ **/
+
 public class LotteryObject {
-    private BooleanProperty winner;
+    private final BooleanProperty winner;
     private final SimpleStringProperty name;
-    private SimpleIntegerProperty entries;
+    private final SimpleIntegerProperty entries;
+    
+    /**
+     * Constructor
+     * @param name of the participant
+     * @param entries number of entries for this lottery
+     */
     public LotteryObject(String name, int entries) {
         this.name = new SimpleStringProperty(name);
         this.winner = new SimpleBooleanProperty(false);

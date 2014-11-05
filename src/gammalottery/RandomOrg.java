@@ -1,32 +1,32 @@
-package gammalottery;
-
-/*
+/**
  * All components of this software is dual licensed under GNU General Public License v2 (GPL-2) 
  * for personal usage for commercial usage you must contact the author prior distribution, usage.
- *
- * @Author: Rodrigo Mansueli Nunes
- * @e-mail: mansueli@ualberta.ca
- * @site: http://kyllo.com.br
- */
+ **/
+package gammalottery;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
 /**
+ * Random.org Wrapper class
  *
- * @author mansueli
- */
+ * @author:Rodrigo Mansueli Nunes  {@literal <mansueli@ualberta.ca>}
+ * <a href="http://kyllo.com.br">kyllo.com.br</a>
+ *
+ * TODO implements specific catch for every case (be aware of the errors
+ * from Website's answers such as error 503)
+ **/
 public class RandomOrg {
-
     /**
-     *
      * @return a double value between 0 and 1.
      */
+    @SuppressWarnings({"BroadCatchBlock", "TooBroadCatch", "UseSpecificCatch"})
     public static double getRand() {
         String rand;
         try {
@@ -39,10 +39,12 @@ public class RandomOrg {
         System.out.println("Failed to get from Random.org (getRand)");
         return Math.random();
     }
+
     /**
      *
      * @return a long value between 0 and 1000.
      */
+    @SuppressWarnings({"BroadCatchBlock", "TooBroadCatch", "UseSpecificCatch"})
     public static long getRandLong() {
         String rand;
         try {
@@ -53,20 +55,21 @@ public class RandomOrg {
             //Logger.getLogger(RandomOrg.class.getName()).log(Level.SEVERE, null, e);
         }
         System.out.println("Failed to get from Random.org (getRandLong)");
-        return (long) (Math.random()*1000);
+        return (long) (Math.random() * 1000);
     }
-    
-     /**
+
+    /**
      *
      * @param min lower range (usually 0)
      * @param max maximum value of to be achieved
      * @return a double value between 0 and 1.
      */
+    @SuppressWarnings({"BroadCatchBlock", "TooBroadCatch", "UseSpecificCatch"})
     public static int getRandInteger(int min, int max) {
         String rand;
         try {
-            final String query = "http://www.random.org/integers/?format=plain&min=" + 
-                                        min + "&max=" + max + "&num=1&base=10&col=1";
+            final String query = "http://www.random.org/integers/?format=plain&min="
+                    + min + "&max=" + max + "&num=1&base=10&col=1";
             rand = get(query);
             return Integer.parseInt(rand);
         } catch (Exception e) {
@@ -77,6 +80,7 @@ public class RandomOrg {
         int randomNum = random.nextInt((max - min) + 1) + min;
         return randomNum;
     }
+
     /**
      *
      * @param urlString A website URL which responds with a Plain Text output
@@ -84,6 +88,7 @@ public class RandomOrg {
      * @return A String with the contents of the website
      * @throws IOException when it couldn´t load the page.
      */
+    @SuppressWarnings({"BroadCatchBlock", "TooBroadCatch", "UseSpecificCatch"})
     public static String get(String urlString) throws IOException {
         HttpURLConnection connection;
         BufferedReader br = null;
@@ -94,10 +99,9 @@ public class RandomOrg {
             connection.setRequestMethod("GET");
             br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             number = br.readLine();
-        }catch(Exception e){
+        } catch (Exception e) {
             return null;
-        } 
-        finally {
+        } finally {
             if (br != null) {
                 br.close();
             }

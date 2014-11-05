@@ -1,12 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * All components of this software is dual licensed under GNU General Public License v2 (GPL-2) 
+ * for personal usage for commercial usage you must contact the author prior distribution, usage.
+ *
  */
 package gammalottery;
 
@@ -22,8 +17,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,8 +35,11 @@ import javafx.util.Callback;
 /**
  * FXML Controller class
  *
- * @author Rodrigo
- */
+ * @author:Rodrigo Mansueli Nunes  {@literal <mansueli@ualberta.ca>}
+ * <a href="http://kyllo.com.br">kyllo.com.br</a>
+ *
+ **/
+
 public class GammaFXMLController {
 
     private final Set<String> nameslist = new HashSet<>();
@@ -67,6 +65,9 @@ public class GammaFXMLController {
         return nameBox.getItems();
     }
 
+    /**
+     *  Initializes the Program's GUI
+     */
     @SuppressWarnings("empty-statement")
     public void init() {
         InputStream fis;
@@ -118,8 +119,10 @@ public class GammaFXMLController {
     }
 
     @FXML
+    /**
+     * Adds a name from the ComboBox into the list of participants
+     */
     private void addToLottery() {
-
         boolean flag = false;
         for (LotteryObject o : gammaList) {
             if (o.getName().equalsIgnoreCase(nameBox.getValue())) {
@@ -144,6 +147,9 @@ public class GammaFXMLController {
     }
 
     @FXML
+    /** 
+     * Remove a name from the list
+     */
     private void removeFromLottery() {
         List<LotteryObject> dummy = new ArrayList<>(gammaList);
         dummy.stream().filter((o) -> (o.getName().
@@ -155,6 +161,9 @@ public class GammaFXMLController {
     }
 
     @FXML
+    /**
+     * Do the actual draw of the winner
+     */
     private void drawAction() {
         List<String> actualList = new ArrayList<>();
         gammaList.stream().forEach((o) -> {

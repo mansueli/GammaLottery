@@ -1,20 +1,16 @@
 /*
- * All components of this software is dual licensed under GNU General Public License v2 (GPL-2) 
- * for personal usage for commercial usage you must contact the author prior distribution, usage.
+ * All components of this software is licensed under GNU General Public License v2 (GPL-2) 
+ * for personal usage. For commercial usage you must contact the author prior distribution or usage.
  *
- * @Author: Rodrigo Mansueli Nunes
- * @e-mail: mansueli@ualberta.ca
- * @site: http://kyllo.com.br
  */
 
 package gammalottery;
 
-import gammalottery.GammaFXMLController;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -23,11 +19,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 /**
+ * JavaFX Application class
  *
- * @author mansueli
- */
+ * @author:Rodrigo Mansueli Nunes  {@literal <mansueli@ualberta.ca>}
+ * <a href="http://kyllo.com.br">kyllo.com.br</a>
+ *
+ **/
 public class Main extends Application {
-    
+    /**
+     * 
+     * @param stage JavaFX primary stage
+     * @throws Exception load exception
+     **/
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("gamma.fxml"));
